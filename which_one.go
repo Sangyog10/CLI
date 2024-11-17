@@ -1,3 +1,5 @@
+//similar to which(1) in unix
+//eg: $go run which_one.go which
 package main
 import (
 "fmt"
@@ -16,7 +18,7 @@ func main(){
 	pathSplit := filepath.SplitList(path)
 	for _, directory := range pathSplit {
 		fullpath := filepath.Join(directory,file)
-		fileInfo, err := os.Stat(fullpath) 
+		fileInfo, err := os.Stat(fullpath)  //returns the info of file
 		if err != nil{
 			continue
 		}
